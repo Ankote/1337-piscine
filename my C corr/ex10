@@ -1,0 +1,41 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ex10                                               :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aankote <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/01 21:04:44 by aankote           #+#    #+#              #
+#    Updated: 2022/09/01 21:05:27 by aankote          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#include <stdio.h>
+unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+        unsigned int    i;
+        unsigned        count;
+
+        i = 0;
+        count = 0;
+
+        while (src[count] != '\0')
+        {
+                count++;
+        }
+        while (src[i] != '\0' && i < size)
+        {
+                dest[i] = src[i];
+                i++;
+        }
+        dest[i] = '\0';
+        return (count);
+}
+
+int main()
+{
+        char dest[]="Abulsrfbvlsf";
+        char src[]="acindidtgdt";
+        printf("%d",ft_strlcpy(dest,src,55));
+        printf("\n%s",dest);
+}

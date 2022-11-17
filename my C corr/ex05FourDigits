@@ -1,0 +1,40 @@
+
+
+#include <unistd.h>
+char ft_putchar(char n){
+    write(1,&n,1);
+}
+void ft_print_comb2(void){
+  int a,b,c,d;
+  a=0;
+ 
+  while(a<=6){
+       b=a+1;
+      while(b<=7){
+          
+           c=b+1;
+      while(c<=8){
+          d=c+1;
+          while(d<=9){
+            ft_putchar(a + 48);
+            ft_putchar(b + 48);
+            ft_putchar(c + 48);
+            ft_putchar(d + 48);
+            if(a!=6){
+            write(1,", ",2);
+            }
+              d++;
+          }
+         c++;
+      }
+      b++;
+      }
+     
+      a++;
+  }
+}
+int main(){
+ft_print_comb2();
+    return 0;
+}
+

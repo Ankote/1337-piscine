@@ -1,0 +1,30 @@
+
+#include <unistd.h>
+char ft_putchar(char n){
+    write(1,&n,1);
+}
+void ft_print_comb2(void){
+    int units,teens;
+    units =-1;
+    while(units++<=98){
+        teens=units+1;
+        while(teens<=99){
+            ft_putchar(units/10 + 48);
+            ft_putchar(units%10 + 48 );
+            write(1," ",1);
+            ft_putchar(teens/10 + 48 );
+            ft_putchar(teens%10 + 48 );
+            if(units!=99){
+                write(1 ,", ",1);
+            }
+            teens++;
+        }
+        
+    }
+}
+int main() {
+    // Write C code here
+   
+ft_print_comb2();
+    return 0;
+}

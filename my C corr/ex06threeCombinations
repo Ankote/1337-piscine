@@ -1,0 +1,44 @@
+
+
+#include <unistd.h>
+char ft_putchar(char n){
+    write(1,&n,1);
+}
+void ft_print_dig(int a,int b,int c){
+    ft_putchar(a/10 + 48);
+    ft_putchar(a%10 + 48);
+    write(1," ",1);
+    ft_putchar(b/10 + 48);
+    ft_putchar(b%10 + 48);
+    write(1," ",1);
+    ft_putchar(c/10 + 48);
+    ft_putchar(c%10 + 48);
+    write(1," ",1);
+}
+void ft_print_comb2(void){
+    int f,s,t;
+    f=0;
+    while(f<=97){
+        s=f+1;
+        while(s<=98){
+            t=s+1;
+            while(t<=99){
+             ft_print_dig(f,s,t);
+            if(f!=97)
+            {
+                write(1,", ",2);
+            }  
+            t++;
+            }
+            
+            s++;
+        }
+       
+        f++;
+    }
+    
+}
+int main(){
+ft_print_comb2();
+    return 0;
+}
